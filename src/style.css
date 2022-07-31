@@ -1,12 +1,21 @@
 @font-face {
     font-family: 'MyFont';
-    src: url('./my-font.woff2') format('woff2'),
-      url('./my-font.woff') format('woff');
+    src: url('./GoudyBookletter1911-Regular.ttf') format('ttf');
     font-weight: 600;
     font-style: normal;
   }
-  .hello {
-    color: red;
-   font-family: 'MyFont';
-    background: url('./icon.png');
+
+:root{
+    --ff-neutral: 'MyFont';
+}  
+body{
+    margin: 0;
+    padding: 0;
+}
+
+  #content {
+    color: white;
+   font-family: var(--ff-neutral);
+    background: url('./hero-bg-image.jpg');
+    height: 100vh;
   }  
