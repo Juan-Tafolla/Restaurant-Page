@@ -1,0 +1,1 @@
+(()=>{"use strict";document.body.prepend(function(){const t=document.createElement("div");return t.setAttribute("id","content"),t}())})();
