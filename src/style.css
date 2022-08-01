@@ -23,7 +23,7 @@ body{
 
   #content {
     color: white;
-    /* background: url('./assets/body-bg.jpg') no-repeat; */
+    background: url('./assets/body-bg.jpg') no-repeat;
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr 4.5fr 0.5fr;
