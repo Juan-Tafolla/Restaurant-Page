@@ -4,11 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
  module.exports = {
   mode: 'development',
   entry: {
-    index: './src/index.js',
     home: './src/home.js',
     menu: './src/menu.js',
     contact: './src/contact.js',
-
+    index: './src/index.js',
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -35,5 +38,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
         type: 'asset/resource',
       },
     ],
+  },  
+  optimization: {
+    runtimeChunk: 'single',
   },
  };

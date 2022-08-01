@@ -1,11 +1,14 @@
-// export default function printMe();
+export {
+    hero,
+    main
+}
 
-// function printMe(){
-//   console.log('I get called from home.js!');
-// };
-// function home(){
-//   const element = document.createElement('div');
-//   element.setAttribute('id','content');
-//   console.log(printMe());
-//   return element;
-// };
+ const hero = ()=> {
+    const hero = document.createElement('div');
+    hero.setAttribute('class','hero');
+    hero.textContent = 'This is a big HERO';
+    return hero;
+ };
+ const main = ()=>{
+    console.log('Hi from home.js'); 
+ };

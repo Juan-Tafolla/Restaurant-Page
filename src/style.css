@@ -1,12 +1,20 @@
 @font-face {
     font-family: 'MyFont';
-    src: url('./GoudyBookletter1911-Regular.ttf') format('ttf');
+    src: url('./assets/GoudyBookletter1911-Regular.ttf') format('ttf');
     font-weight: 600;
     font-style: normal;
   }
 
 :root{
     --ff-neutral: 'MyFont';
+    --green: #008A12;
+    --light-green:#00BD18;
+    --blue: #00338A;
+    --purple: #8A0078;
+    --brown: #8A5700;
+}
+*{
+  font-family: var(--ff-neutral);
 }  
 body{
     margin: 0;
@@ -15,7 +23,39 @@ body{
 
   #content {
     color: white;
-   font-family: var(--ff-neutral);
-    background: url('./hero-bg-image.jpg');
+    /* background: url('./assets/body-bg.jpg') no-repeat; */
     height: 100vh;
-  }  
+    display: grid;
+    grid-template-rows: 1fr 4.5fr 0.5fr;
+    grid-template-columns: 1fr;
+  }
+  .header{
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 2fr repeat(3,1fr);
+    padding: 1rem;
+    background-color: black;
+    opacity: 0.8;
+  } 
+  .logo{
+    grid-column: 1 / 2;
+  } 
+  .navBar{
+    grid-column: 2 / 5;
+  }
+  .hero{
+    justify-self: center;
+    width: 60vw;
+    grid-row: 2 / 3;
+    font-size: 2rem;
+    background: url('./assets/hero-bg-image.jpg') no-repeat;
+    margin: 2rem;
+  }
+  .footer{
+    grid-row: 3 / 4;
+    background-color: black;
+    opacity: 0.9;
+    display: grid;
+    place-content: center;
+    color: rgba(255, 255, 255, 0.4);
+  }
