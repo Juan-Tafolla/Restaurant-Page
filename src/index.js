@@ -4,7 +4,7 @@ import {
      from './home.js';
 import './style.css';
 
-main();
+
 
  const content = () => {
     const element = document.createElement('div');
