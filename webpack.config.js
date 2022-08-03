@@ -17,10 +17,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
     new HtmlWebpackPlugin({
       filename: 'index.html',
       title: 'My Restaurant',
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'menu.html',
-      title: 'My Restaurant',
+      template: 'src/template.html',
     }),
   ],
    output: {

@@ -1,8 +1,18 @@
 import { hero } from './home.js';
 import { menu } from './menu.js';
+import { contact } from './contact.js';
 import './style.css';
 import LogoIcon from './assets/Logo.png';
+import pageIcon from './assets/dragonIcon.png'
 
+let condition = '';
+const content = document.querySelector('#content');
+const iconLink = document.createElement('link');
+iconLink.setAttribute('rel','icon');
+iconLink.setAttribute('type','image/x-icon');
+iconLink.setAttribute('href',pageIcon);
+console.log(iconLink);
+document.head.appendChild(iconLink)
 
 const header = () => {
     const header = document.createElement('div');
@@ -17,6 +27,20 @@ const header = () => {
     navMenu.textContent = 'Menu';
     navContact.textContent = 'Contact';
 
+    //buton functionality
+    navHome.addEventListener('click', ()=>{
+        condition = 'home';
+        run(condition);
+    });
+    navMenu.addEventListener('click', ()=>{
+        condition = 'menu';
+        run(condition);
+    });
+    navContact.addEventListener('click', ()=>{
+        condition = 'contact';
+        run(condition);
+    });
+
     navBar.appendChild(navHome);
     navBar.appendChild(navMenu);
     navBar.appendChild(navContact);
@@ -29,8 +53,6 @@ const header = () => {
     header.appendChild(logo);
     header.appendChild(navBar);
 
-    // navMenu.addEventListener('click', MenuTab());
-
     return header;
 }
 const footer = () => {
@@ -39,25 +61,22 @@ const footer = () => {
     footer.textContent = 'Created by Juan Tafolla'
     return footer;
 }
-
-const content = () => {
-    const element = document.createElement('div');
-    element.setAttribute('id','content');
-    element.appendChild(header());
-    element.appendChild(hero());
-    element.appendChild(footer());
-    return element;
- };
-
-//  function MenuTab(){
-//     document.body.innerHTML = '';
-//     const element = document.createElement('div');
-//     element.setAttribute('id','content');
-//     element.appendChild(header());
-//     element.appendChild(menu());
-//     element.appendChild(footer());
-//     document.body.prepend(element);
-//  }
-
-
-document.body.prepend(content());
+run();
+function run(condition){
+if (condition == 'menu') {
+    content.innerHTML = "";
+    content.appendChild(header());
+    content.appendChild(menu());
+    content.appendChild(footer());  
+} else if(condition == 'contact'){
+    content.innerHTML = "";
+    content.appendChild(header());
+    content.appendChild(contact());
+    content.appendChild(footer());    
+} else{
+    content.innerHTML = "";
+    content.appendChild(header());
+    content.appendChild(hero());
+    content.appendChild(footer());    
+}
+}

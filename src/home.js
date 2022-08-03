@@ -1,8 +1,6 @@
-export {
-    hero
-}
+export { hero }
 
- const hero = ()=> {
+ const hero = () => {
 
     const container = document.createElement('div');    
     const hero = document.createElement('div');
@@ -10,8 +8,8 @@ export {
     container.setAttribute('class','container')
     hero.setAttribute('class','hero');
     paraHero.setAttribute('class','paraHero');
-    hero.textContent = 'The Green Dragon Inn';
-    paraHero.textContent = 'The Green Dragon Inn';
+    hero.textContent = 'The Green Dragon';
+    paraHero.textContent = 'Restaurant - Bar';
     container.appendChild(hero);
     container.appendChild(paraHero);
     return container;
