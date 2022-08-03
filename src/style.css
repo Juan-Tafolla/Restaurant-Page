@@ -68,7 +68,7 @@ body{
   .navBar > button:hover{
     background-color: hsla(0, 0%, 25%, 0.7);  
   }
-  .hero{
+  .container{
     justify-self: center;
     grid-row: 2 / 3;
     font-size: 2rem;
@@ -78,7 +78,7 @@ body{
     margin: 2rem;
     display: grid;
   }
-  .hero > img{
+  .container > img{
     justify-self: center;
     width:clamp(600px,100%,1600px);
   }
