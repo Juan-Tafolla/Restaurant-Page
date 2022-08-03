@@ -23,7 +23,11 @@ body{
 
   #content {
     color: white;
-    background: url('./assets/body-bg.jpg');
+    background-image: url('./assets/hero-bg.jpg');
+    background-size: 150vw;
+    background-repeat: no-repeat;
+    background-color: black;
+    width: 100vw;
     display: grid;
     grid-template-rows: 1fr 15fr 0.5fr;
     grid-template-columns: 1fr;
@@ -34,45 +38,48 @@ body{
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     padding: 1rem;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.85);
     opacity: 0.8;
   } 
-  .logo{
+  .header > img{
     grid-column: 1 / 2;
     align-self: center;
     justify-self: center;
+    width: 300px;
   } 
   .navBar{
     grid-column: 2 / 5;
     display: grid;
     grid-template-columns: repeat(3,1fr);
- 
-  }
-  .navBar > a{
+        
+  }  
+  .navBar > button{
+    color: white;
+    background-color: inherit;
     width: 100%;
     height: 100%;
+    font-size: 1.75rem;
     cursor: pointer;
     align-self: center;
     display:flex;
     align-items: center;
     justify-content: center;
   }
-  .navBar > a:hover{
+  .navBar > button:hover{
     background-color: hsla(0, 0%, 25%, 0.7);  
   }
   .hero{
     justify-self: center;
     grid-row: 2 / 3;
     font-size: 2rem;
-    /* background: url('./assets/hero-bg-image.jpg'); */
-    background-color: rgba(170, 170, 170, 0.9);
-    box-shadow: 0px 0px 5px 5px black;
     padding: 2.5rem;
-    width: clamp(500px,60%,1000px);
-    height: clamp(300px,50%,600px);
+    width: 100%;
+    height: 120vh;
     margin: 2rem;
+    display: grid;
   }
   .hero > img{
+    justify-self: center;
     width:clamp(600px,100%,1600px);
   }
   .footer{

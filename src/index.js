@@ -1,28 +1,17 @@
-import {
-    main,    
-    hero }
-     from './home.js';
+import { hero } from './home.js';
+import { menu } from './menu.js';
 import './style.css';
+import LogoIcon from './assets/Logo.png';
 
-
-
- const content = () => {
-    const element = document.createElement('div');
-    element.setAttribute('id','content');
-    element.appendChild(header());
-    element.appendChild(hero());
-    element.appendChild(footer());
-    return element;
- };
 
 const header = () => {
     const header = document.createElement('div');
-    const logo = document.createElement('div');
+    const logo = document.createElement('img');
     const navBar = document.createElement('div');
 
-    const navHome = document.createElement('a');
-    const navMenu = document.createElement('a');
-    const navContact = document.createElement('a');
+    const navHome = document.createElement('button');
+    const navMenu = document.createElement('button');
+    const navContact = document.createElement('button');
 
     navHome.textContent = 'Home';
     navMenu.textContent = 'Menu';
@@ -33,11 +22,15 @@ const header = () => {
     navBar.appendChild(navContact);
 
     header.setAttribute('class','header');
-    logo.setAttribute('class','logo');
+    logo.setAttribute('src',LogoIcon);
     navBar.setAttribute('class','navBar');
     logo.textContent = 'The Green Dragon Inn';
+
     header.appendChild(logo);
     header.appendChild(navBar);
+
+    // navMenu.addEventListener('click', MenuTab());
+
     return header;
 }
 const footer = () => {
@@ -46,6 +39,25 @@ const footer = () => {
     footer.textContent = 'Created by Juan Tafolla'
     return footer;
 }
+
+const content = () => {
+    const element = document.createElement('div');
+    element.setAttribute('id','content');
+    element.appendChild(header());
+    element.appendChild(hero());
+    element.appendChild(footer());
+    return element;
+ };
+
+//  function MenuTab(){
+//     document.body.innerHTML = '';
+//     const element = document.createElement('div');
+//     element.setAttribute('id','content');
+//     element.appendChild(header());
+//     element.appendChild(menu());
+//     element.appendChild(footer());
+//     document.body.prepend(element);
+//  }
 
 
 document.body.prepend(content());
